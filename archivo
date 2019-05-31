@@ -1,0 +1,29 @@
+// archivoprueba.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include "conio.h"
+#include <string>
+#include <iostream>
+using namespace std;
+
+void main()
+{ char cadena[50]=" ";
+	FILE *Prueba;
+	Prueba = fopen ("Prueba.txt","w+");
+	if (Prueba == NULL)
+	{
+		cout<<"No se puede abrir el archivo";
+		return;
+	}
+	cin.ignore();
+	cin.getline(cadena,50);
+
+	fputs(cadena, Prueba);
+	cout<<"Texto guardado con exito"<<endl;
+	fgets(cadena,50,Prueba);
+	getch();
+
+}
